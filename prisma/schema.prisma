@@ -16,12 +16,15 @@ model User {
   updatedAt DateTime @updatedAt
 
   email String @unique
-  hash  String
+  hash  String?
 
   firstName String?
   lastName  String?
 
   bookmarks Bookmark[]
+
+  googleId String? @unique
+  provider String? @default("local")
 
   @@map("users")
 }
