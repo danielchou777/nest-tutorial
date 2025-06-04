@@ -28,6 +28,7 @@ export class AuthService {
       });
       delete user.hash;
 
+      // return the saved user
       return user;
     } catch (err) {
       if (err instanceof PrismaClientKnownRequestError) {
@@ -38,7 +39,6 @@ export class AuthService {
       throw err;
     }
 
-    // return the saved user
   }
 
   async signin(dto: AuthDto) {
