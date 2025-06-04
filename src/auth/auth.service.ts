@@ -15,7 +15,7 @@ export class AuthService {
   ) {}
 
   async signup(dto: AuthDto) {
-    // gernerate the password hash
+    // generate the password hash
     const hash = await argon.hash(dto.password);
 
     try {
